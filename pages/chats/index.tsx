@@ -1,11 +1,13 @@
 import Layout from "@/components/layout";
+import Link from "next/link";
 
 export default function Chats() {
   return (
     <Layout title="채팅" hasTabBar>
       <div className="py-10 divide-y-[1px]">
         {[1, 1, 1, 1, 1, 1, 1].map((_, i) => (
-          <div
+          <Link
+            href={`/chats/${i}}`}
             key={i}
             className="flex px-4 cursor-pointer py-3 items-center space-x-3"
           >
@@ -16,7 +18,7 @@ export default function Chats() {
                 See you tommorrow in the corner at 2pm!
               </p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </Layout>
